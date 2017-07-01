@@ -1,12 +1,11 @@
-<!-- ######## https://html-online.com/editor/  ######## -->
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="/js.cookie.js"></script>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <script src="/scripts/jquery.min.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script src="/scripts/jquery-1.12.4.js"></script>
+  <script src="/scripts/jquery-ui.js"></script>
+  <script src="/scripts/js.cookie.js"></script>
   
   <style>
   
@@ -57,7 +56,7 @@
 }
   
 body {
-    background-image: url("http://i.imgur.com/MX6JFfX.jpg"); /* http://wallpaperpulse.com/img/5176790.jpg     http://i.imgur.com/MX6JFfX.jpg     \protoio-Coffee%20jukebox-html\assets\784f637687a3bbb389d0d6fb8885daaa.jpg*/
+    background-image: url("images/background.jpg");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -286,7 +285,7 @@ function songQueue() {
 				songBar += createCardSongQueue(data);
 			}
 			if(songBar === "") {
-				songBar = "No Songs in queue. Add a song to play next!";
+				songBar = "<h1>No Songs currently in queue. Add a song to play next!</h1>";
 			}
 			accordion.innerHTML = songBar;
 		}
@@ -353,7 +352,7 @@ window.onload= function(){
 <center>
 <table>
   <tr>
-    <td ><img style="float: left; margin: 0px 0px 0px 0;" src="http://i.imgur.com/aQ8Nqdg.jpg" alt="" width="69" height="69" /></td>
+    <td ><img style="float: left; margin: 0px 0px 0px 0;" src="images/logo.jpg" width="69" height="69" /></td>
     <td ><h1 style="color: #5b5050;"><center>Welcome to Starsucks Coffee</center></h1><h1 style="color: #5b5050;"><center>&nbsp;&nbsp;Have a look at our current playlist:</center></h1></td>
   </tr>
 </table>

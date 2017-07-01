@@ -2,13 +2,6 @@ var express = require('express');
 var app = express();
 var root = process.cwd();
 
-app.get('/songs/:name', function (req, res) {
-	var name = req.params.name;
-	var loc = "/songs/"+name;
-	console.log(loc);
-    res.sendFile(loc, {root});
-});
-
 app.get('/', function (req, res) {
     res.sendFile('myown1.html', {root});
 });
@@ -33,10 +26,30 @@ app.get('/player', function (req, res) {
     res.sendFile('songPlay.html', {root});
 });
 
-app.get('/js.cookie.js', function (req, res) {
-    res.sendFile('js.cookie.js', {root});
+app.get('/scripts/:resoursename', function (req, res) {
+	var name = req.params.resourcename;
+	var loc = "/scripts/"+name;
+    res.sendFile(loc, {root});
+});
+
+app.get('/stylesheets/:resoursename', function (req, res) {
+	var name = req.params.resourcename;
+	var loc = "/stylesheets/"+name;
+    res.sendFile(loc, {root});
+});
+
+app.get('/images/:resoursename', function (req, res) {
+	var name = req.params.resourcename;
+	var loc = "/images/"+name;
+    res.sendFile(loc, {root});
+});
+
+app.get('/songs/:name', function (req, res) {
+	var name = req.params.name;
+	var loc = "/songs/"+name;
+    res.sendFile(loc, {root});
 });
 
 app.listen(8080, function () {
-  console.log('Coffee-Jukebox app listening on port 8080!');
+  console.log('Coffee-Jukebox is running!');
 });
