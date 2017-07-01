@@ -1,0 +1,376 @@
+<!-- ######## https://html-online.com/editor/  ######## -->
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="/js.cookie.js"></script>
+  
+  <style>
+  
+.wrapper {
+  width: 50%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+}
+.wrapper:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+.main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 50;
+}
+
+@media only screen and (max-width: 768px) {
+.buton{
+	padding-top: 17em;
+}
+  h1 {
+    font-size: 20px;
+  }
+.main{
+	height:21em;
+	//width:550px;
+}
+}
+
+@media only screen and (max-width: 320px) {
+.buton{
+	padding-top: 17em;
+}
+  h1 {
+    font-size: 10px;
+  }
+.main{
+	height:21em;
+	//width:550px;
+}
+}
+  
+body {
+    background-image: url("http://i.imgur.com/MX6JFfX.jpg"); /* http://wallpaperpulse.com/img/5176790.jpg     http://i.imgur.com/MX6JFfX.jpg     \protoio-Coffee%20jukebox-html\assets\784f637687a3bbb389d0d6fb8885daaa.jpg*/
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+#overlay {
+   display:none;    //This make it initially hidden
+   position:fixed;  //This makes it so it says in a fixed position even if they scroll around
+   left:0px;        //This positions the element to the left most position
+   top:0px;         //This positions the elment to the top most position
+   width:100%;      //This makes the element take up 100% of the parents width
+   height:100%;     //This makes the element take up 100% of the parents height
+   background:#000; //Give it a black background
+   opacity:0.5;     //Change the opacity to 50% so that is see through.
+   z-index:99999;   //Change the z-index so it will be above everything else
+}
+
+#popup {
+   display:none;
+   position:fixed;
+   left:50%;            //left and top here position top left page
+   top:50%;             //of the element to the center of the 
+   width:300px;         //Set the popup to have a specific width/height
+   height:150px;
+   margin-top:-75px;   //To get the popup to center correctly we need
+   margin-left:-150px;   //To displace the the top/left margins by half of the width/height
+   background:#FFFFFF;  //Background of white
+   border:2px solid #000;  //And give it a border
+   z-index:100000;      //Set z-index to 1 more than that of the overlay so the popup is over the overlay
+}
+
+input#bigbutton {
+width:250px;
+background: #3e9cbf; /*the colour of the button*/
+padding: 8px 14px 10px; /*apply some padding inside the button*/
+border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+/*style the text*/
+font-size:1.5em;
+font-family:Oswald, sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
+letter-spacing:.1em;
+text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
+color: #fff;
+/*use box-shadow to give the button some depth - see cssdemos.tupence.co.uk/box-shadow.htm#demo7 for more info on this technique*/
+-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+/*give the corners a small curve*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+
+input#bigbutton1 {
+width:250px;
+background: #3e9cbf; /*the colour of the button*/
+padding: 8px 14px 10px; /*apply some padding inside the button*/
+border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+/*style the text*/
+font-size:1.5em;
+font-family:Oswald, sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
+letter-spacing:.1em;
+text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
+color: #fff;
+/*use box-shadow to give the button some depth - see cssdemos.tupence.co.uk/box-shadow.htm#demo7 for more info on this technique*/
+-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+/*give the corners a small curve*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+/***SET THE BUTTON'S HOVER AND FOCUS STATES***/
+input#bigbutton:hover, input#bigbutton:focus {
+color:#dfe7ea;
+/*reduce the size of the shadow to give a pushed effect*/
+-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+}
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:active {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+container {
+	
+
+}
+
+.button {
+   border: 0px solid #0a3c59;
+   background: #756730;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e0a855), to(#756730));
+   background: -webkit-linear-gradient(top, #e0a855, #756730);
+   background: -moz-linear-gradient(top, #e0a855, #756730);
+   background: -ms-linear-gradient(top, #e0a855, #756730);
+   background: -o-linear-gradient(top, #e0a855, #756730);
+   background-image: -ms-linear-gradient(top, #e0a855 0%, #756730 100%);
+   padding: 12px 24px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   border-radius: 15px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #acbd7f 0 1px 0;
+   color: #06426c;
+   font-size: 15px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border: 0px solid #0a3c59;
+   text-shadow: #1e4158 0 1px 0;
+   background: #e0a855;
+   background: -webkit-gradient(linear, left top, left bottom, from(#755f1d), to(#e0a855));
+   background: -webkit-linear-gradient(top, #755f1d, #e0a855);
+   background: -moz-linear-gradient(top, #755f1d, #e0a855);
+   background: -ms-linear-gradient(top, #755f1d, #e0a855);
+   background: -o-linear-gradient(top, #755f1d, #e0a855);
+   background-image: -ms-linear-gradient(top, #755f1d 0%, #e0a855 100%);
+   color: #fff;
+   }
+.button:active {
+   text-shadow: #1e4158 0 1px 0;
+   border: 0px solid #0a3c59;
+   background: #756730;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e0a855), to(#e0a855));
+   background: -webkit-linear-gradient(top, #e0a855, #756730);
+   background: -moz-linear-gradient(top, #e0a855, #756730);
+   background: -ms-linear-gradient(top, #e0a855, #756730);
+   background: -o-linear-gradient(top, #e0a855, #756730);
+   background-image: -ms-linear-gradient(top, #e0a855 0%, #756730 100%);
+   color: #fff;
+}
+</style>
+</head>
+<body>
+<span id="ip"></span>
+
+<script type="text/javascript">
+var auth_token;
+
+function createCardSongQueue(data) {
+	var M_ID = data.M_ID;
+	var musicName = data.musicName;
+	var album = data.album;
+	var artists = data.artists;
+	var releaseYear = data.releaseYear;
+	var playCount = data.playCount;
+	var bar_id = "bar_"+M_ID;
+	var ref_id = "#"+bar_id;
+	
+	var cardTemplateSongQueue = `
+		<div class="panel panel-default">
+		<div class="panel-heading">
+		<a href=${ref_id} data-toggle="collapse" data-parent="#accordion">
+		<h4 class="panel-title">${musicName}</h4>
+		</a>
+		</div>
+		<div id=${bar_id} class="panel-collapse collapse">
+		<div class="panel-body">
+
+		<table>
+			<tr>
+				<td><b>Album</b>: ${album}<br></td>
+				<td><br></td>
+			</tr>
+			<tr>
+				<td><b>Artist</b>: ${artists}<br></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><b>Release Year</b>: ${releaseYear}<br></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><b>Play Count</b>: ${playCount}</td>
+			</tr>
+		</table>
+
+		</div>
+		</div>
+		</div>
+		`;
+		return cardTemplateSongQueue;
+	
+}
+
+function songQueue() {
+	var songBar = "";
+	var songList;
+	var selectRequest = new XMLHttpRequest();
+	selectRequest.onreadystatechange=function() {
+		if(selectRequest.readyState===XMLHttpRequest.DONE && selectRequest.status===200) {
+			songsList = JSON.parse(selectRequest.responseText);
+			var n = songsList.length;
+			for(var i=0; i < n; i++) {
+				var data = {
+					M_ID : songsList[i].m_id,
+					musicName : songsList[i].musicname,
+					album : songsList[i].album,
+					artists : songsList[i].artists,
+					releaseYear : songsList[i].releaseyear,
+					playCount : songsList[i].playcount
+				}
+				songBar += createCardSongQueue(data);
+			}
+			accordion.innerHTML = songBar;
+		}
+	}
+	selectRequest.open('POST', "https://data.jeopardy25.hasura-app.io/v1/query",true);
+	selectRequest.setRequestHeader('Content-type','application/json');
+	selectRequest.setRequestHeader('Authorization','Bearer '+auth_token);
+	selectRequest.send(JSON.stringify({type: "select",args:{table: "queuedetails", columns:["*"], order_by:"addtime"}}));
+}
+
+function submitFeedback() {
+    var feedback = prompt("Please Enter Your Feedback:", "");
+    if (feedback == null || feedback == "") {
+        alert("The Feedback column is empty.");
+    } else {
+        var insertRequest = new XMLHttpRequest();
+		insertRequest.onreadystatechange=function() {  
+			if(this.readyState===XMLHttpRequest.DONE && this.status===200) {
+				alert("Feedback submitted successfully!");
+			}
+		}
+		insertRequest.open('POST', "https://data.jeopardy25.hasura-app.io/v1/query",true);
+		insertRequest.setRequestHeader('Content-type','application/json');
+		insertRequest.setRequestHeader('Authorization','Bearer '+auth_token);
+		insertRequest.send(JSON.stringify({type:"insert",args:{table:"feedback", objects:[{"feedbacktext": feedback}]}}));
+    }
+}
+
+
+
+window.onload= function(){
+
+	Cookies.remove('auth_token');
+	var request= new XMLHttpRequest();
+	
+	request.onreadystatechange= function(){
+		if (request.readyState=== XMLHttpRequest.DONE){
+			if(request.status=== 200){
+				auth_token = JSON.parse(this.responseText).auth_token;
+				Cookies.set('auth_token', auth_token);
+				songQueue();
+			}
+			else if(request.status=== 403){
+				alert('Incorrect credentials');
+			}
+			else if(request.status=== 500){
+				alert('Something went wrong');
+			}
+			else{
+				alert('Unknown error');
+			}
+		}
+	}
+	
+	//make the request
+	var username= "customer";
+	var password= "customer123";
+	request.open('POST', 'https://auth.jeopardy25.hasura-app.io/login', true);
+	request.setRequestHeader('Content-Type', 'application/json');
+	request.send(JSON.stringify({username: username, password: password}));
+}
+
+</script>
+<center>
+<table>
+  <tr>
+    <td ><img style="float: left; margin: 0px 0px 0px 0;" src="http://i.imgur.com/aQ8Nqdg.jpg" alt="" width="69" height="69" /></td>
+    <td ><h1 style="color: #5b5050;"><center>Welcome to Starsucks Coffee</center></h1><h1 style="color: #5b5050;"><center>&nbsp;&nbsp;Have a look at our current playlist:</center></h1></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<div class="wrapper">
+<div class="main" style="overflow-y:auto;">
+<div id="accordion" class="panel-group">
+<!-- populated through query -->
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+
+<div class="buton">
+<a href='#' class='button' onclick="location.href='/songList';" >Get The List</a>&nbsp; &nbsp;
+<a href='#' class='button' onclick="submitFeedback()" >Feedback</a>
+</div>
+<!-- <input id="bigbutton" type="submit" value="Get The List" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<input id="bigbutton1" type="submit" value="Complaints?" onclick="myFunction()"/>
+-->
+</center>
+</body>

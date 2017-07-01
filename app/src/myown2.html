@@ -1,0 +1,436 @@
+<!-- ######## https://html-online.com/editor/  ######## -->
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/js.cookie.js"></script>
+<!--  <script>
+  setTimeout(function(){
+   window.location.reload(1);
+  }, 5000);
+  </script>
+-->
+
+<script type="text/javascript">
+// Validating Empty Field
+function check_empty() {
+if (document.getElementById('name').value == "" || document.getElementById('email').value == "" || document.getElementById('msg').value == "") {
+alert("Fill All Fields !");
+} else {
+document.getElementById('form').submit();
+alert("Form Submitted Successfully...");
+}
+}
+//Function To Display Popup
+function div_show() {
+document.getElementById('abc').style.display = "block";
+}
+//Function to Hide Popup
+function div_hide(){
+document.getElementById('abc').style.display = "none";
+}
+</script>
+  <style>
+.wrapper {
+  width: 50%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+}
+.wrapper:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+.main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+
+body {
+    background-image: url("http://i.imgur.com/MX6JFfX.jpg"); /* http://wallpaperpulse.com/img/5176790.jpg     http://i.imgur.com/MX6JFfX.jpg    \protoio-Coffee%20jukebox-html\assets\784f637687a3bbb389d0d6fb8885daaa.jpg*/
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+input#bigbutton {
+width:100px;
+background: #3e9cbf; /*the colour of the button*/
+padding: 8px 14px 10px; /*apply some padding inside the button*/
+border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+/*style the text*/
+font-size:1.0em;
+font-family:Oswald, sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
+letter-spacing:.1em;
+text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
+color: #fff;
+/*use box-shadow to give the button some depth - see cssdemos.tupence.co.uk/box-shadow.htm#demo7 for more info on this technique*/
+-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+/*give the corners a small curve*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+/***SET THE BUTTON'S HOVER AND FOCUS STATES***/
+input#bigbutton:hover, input#bigbutton:focus {
+color:#dfe7ea;
+/*reduce the size of the shadow to give a pushed effect*/
+-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+}
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:active {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+container {
+	
+
+}
+
+#abc {
+width:100%;
+height:100%;
+opacity:.95;
+top:0;
+left:0;
+display:none;
+position:fixed;
+background-color:#313131;
+overflow:auto
+}
+img#close {
+position:absolute;
+right:-14px;
+top:-14px;
+cursor:pointer
+}
+div#popupContact {
+position:absolute;
+left:50%;
+top:17%;
+margin-left:-202px;
+font-family:'Raleway',sans-serif
+}
+form {
+max-width:300px;
+min-width:250px;
+padding:10px 50px;
+border:2px solid gray;
+border-radius:10px;
+font-family:raleway;
+background-color:#fff
+}
+h2 {
+background-color:#FEFFED;
+padding:20px 35px;
+margin:-10px -50px;
+text-align:center;
+border-radius:10px 10px 0 0
+}
+hr {
+margin:10px -50px;
+border:0;
+border-top:1px solid #ccc
+}
+input[type=text] {
+width:82%;
+padding:10px;
+margin-top:30px;
+border:1px solid #ccc;
+padding-left:40px;
+font-size:16px;
+font-family:raleway
+}
+#name {
+background-image:url(../images/name.jpg);
+background-repeat:no-repeat;
+background-position:5px 7px
+}
+#email {
+background-image:url(../images/email.png);
+background-repeat:no-repeat;
+background-position:5px 7px
+}
+textarea {
+background-image:url(../images/msg.png);
+background-repeat:no-repeat;
+background-position:5px 7px;
+width:82%;
+height:95px;
+padding:10px;
+resize:none;
+margin-top:30px;
+border:1px solid #ccc;
+padding-left:40px;
+font-size:16px;
+font-family:raleway;
+margin-bottom:30px
+}
+#submit {
+text-decoration:none;
+width:100%;
+text-align:center;
+display:block;
+background-color:#FFBC00;
+color:#fff;
+border:1px solid #FFCB00;
+padding:10px 0;
+font-size:20px;
+cursor:pointer;
+border-radius:5px
+}
+span {
+color:red;
+font-weight:700
+}
+
+.button {
+   border: 0px solid #0a3c59;
+   background: #756730;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e0a855), to(#756730));
+   background: -webkit-linear-gradient(top, #e0a855, #756730);
+   background: -moz-linear-gradient(top, #e0a855, #756730);
+   background: -ms-linear-gradient(top, #e0a855, #756730);
+   background: -o-linear-gradient(top, #e0a855, #756730);
+   background-image: -ms-linear-gradient(top, #e0a855 0%, #756730 100%);
+   padding: 12px 24px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   border-radius: 15px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #acbd7f 0 1px 0;
+   color: #06426c;
+   font-size: 15px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border: 0px solid #0a3c59;
+   text-shadow: #1e4158 0 1px 0;
+   background: #e0a855;
+   background: -webkit-gradient(linear, left top, left bottom, from(#755f1d), to(#e0a855));
+   background: -webkit-linear-gradient(top, #755f1d, #e0a855);
+   background: -moz-linear-gradient(top, #755f1d, #e0a855);
+   background: -ms-linear-gradient(top, #755f1d, #e0a855);
+   background: -o-linear-gradient(top, #755f1d, #e0a855);
+   background-image: -ms-linear-gradient(top, #755f1d 0%, #e0a855 100%);
+   color: #fff;
+   }
+.button:active {
+   text-shadow: #1e4158 0 1px 0;
+   border: 0px solid #0a3c59;
+   background: #756730;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e0a855), to(#e0a855));
+   background: -webkit-linear-gradient(top, #e0a855, #756730);
+   background: -moz-linear-gradient(top, #e0a855, #756730);
+   background: -ms-linear-gradient(top, #e0a855, #756730);
+   background: -o-linear-gradient(top, #e0a855, #756730);
+   background-image: -ms-linear-gradient(top, #e0a855 0%, #756730 100%);
+   color: #fff;
+}
+
+</style>
+</head>
+<body>
+<script type="text/javascript">
+var auth_token;
+var userIP;
+
+function findIP(onNewIP) { //  onNewIp - your listener function for new IPs
+  var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection; //compatibility for firefox and chrome
+  var pc = new myPeerConnection({iceServers: []}),
+    noop = function() {},
+    localIPs = {},
+    ipRegex = /[0-9]{1,3}(\.[0-9]{1,3}){3}/g,
+    key;
+
+  function ipIterate(ip) {
+    if (!localIPs[ip]) onNewIP(ip);
+    localIPs[ip] = true;
+  }
+  pc.createDataChannel(""); //create a bogus data channel
+  pc.createOffer(function(sdp) {
+    sdp.sdp.split('\n').forEach(function(line) {
+      if (line.indexOf('candidate') < 0) return;
+      line.match(ipRegex).forEach(ipIterate);
+    });
+    pc.setLocalDescription(sdp, noop, noop);
+  }, noop); // create offer and set local description
+  pc.onicecandidate = function(ice) { //listen for candidate events
+    if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return;
+    ice.candidate.candidate.match(ipRegex).forEach(ipIterate);
+  };
+}
+
+function addIP(ip) {
+  userIP = ip;
+}
+
+function addToQueue(mID) {
+	var selectRequest = new XMLHttpRequest();
+	selectRequest.onreadystatechange=function() {
+		if(this.readyState===XMLHttpRequest.DONE) {
+			if(this.status===200) {
+				var inQueue = JSON.parse(this.responseText);
+				if(inQueue.count === 0) {
+					var insertRequest = new XMLHttpRequest();
+					insertRequest.onreadystatechange=function() {  
+						if(this.readyState===XMLHttpRequest.DONE && this.status===200) {
+							alert("Added song to queue!");
+							window.location = '/';
+						}
+					}
+					insertRequest.open('POST', "https://data.jeopardy25.hasura-app.io/v1/query",true);
+					insertRequest.setRequestHeader('Content-type','application/json');
+					insertRequest.setRequestHeader('Authorization','Bearer '+auth_token);
+					insertRequest.send(JSON.stringify({type:"insert",args:{table:"songsqueue", objects:[{m_id: mID, userdevice:userIP}]}}));
+				} else {
+					alert("Song Already in queue.");
+				}
+			}
+		}
+	}
+	selectRequest.open('POST', "https://data.jeopardy25.hasura-app.io/v1/query",true);
+	selectRequest.setRequestHeader('Content-type','application/json');
+	selectRequest.setRequestHeader('Authorization','Bearer '+auth_token);
+	selectRequest.send(JSON.stringify({type:"count",args:{table:"songsqueue", where: { "m_id": {"$eq": mID}}}}));
+};
+
+function createCardSongList(data) {
+	var M_ID = data.m_id;
+	var musicName = data.musicname;
+	var album = data.album;
+	var artists = data.artists;
+	var releaseYear = data.releaseyear;
+	var playCount = data.playcount;
+	var bar_id = "bar_"+M_ID;
+	var ref_id = "#"+bar_id;
+	var clickFunc = "addToQueue("+M_ID+")";
+	
+	var cardTemplateSongList = `
+		<div class="panel panel-default">
+		<div class="panel-heading">
+		<a href=${ref_id} data-toggle="collapse" data-parent="#accordion">
+		<h4 class="panel-title">${musicName}</h4>
+		</a>
+		</div>
+		<div id=${bar_id} class="panel-collapse collapse">
+		<div class="panel-body">
+
+		<table>
+			<tr>
+				<td><b>Album</b>: ${album}<br></td>
+				<td><br></td>
+			</tr>
+			<tr>
+				<td><b>Artist</b>: ${artists}<br></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><b>Release Year</b>: ${releaseYear}<br></td>
+				<td rowspan="2"> &nbsp;  &nbsp; <input id=${M_ID} type="submit" value="Add" onclick=${clickFunc} class="button"/></td>
+			</tr>
+			<tr>
+				<td><b>Play Count</b>: ${playCount}</td>
+			</tr>
+		</table>
+
+		</div>
+		</div>
+		</div>
+		`;
+		return cardTemplateSongList;
+	
+}
+
+function songlist() {
+	var songsList;
+	var songBar = "";
+	var selectRequest = new XMLHttpRequest();
+	selectRequest.onreadystatechange=function() {
+		if(selectRequest.readyState===XMLHttpRequest.DONE && selectRequest.status===200) {
+			songsList = JSON.parse(selectRequest.responseText);
+			var n = songsList.length;
+			for(var i=0; i < n; i++) {
+				var data = {
+					m_id : songsList[i].m_id,
+					musicname : songsList[i].musicname,
+					album : songsList[i].album,
+					artists : songsList[i].artists,
+					releaseyear : songsList[i].releaseyear,
+					playcount : songsList[i].playcount
+				};
+				songBar += createCardSongList(data);
+			}
+			accordion.innerHTML = songBar;
+		}
+	}
+	selectRequest.open('POST', "https://data.jeopardy25.hasura-app.io/v1/query",true);
+	selectRequest.setRequestHeader('Content-type','application/json');
+	selectRequest.setRequestHeader('Authorization','Bearer '+auth_token);
+	selectRequest.send(JSON.stringify({type:"select",args:{table:"musicdb",columns:["*"],order_by:"musicname"}}));
+}
+
+window.onload = function(){
+	auth_token = Cookies.get('auth_token');
+	songlist();
+	findIP(addIP);
+}
+  </script>
+
+<center>
+<div>
+<p>&nbsp;</p>
+<table>
+  <tr>
+    <td ><img style="float: left; margin: 0px 0px 0px 0;" src="http://i.imgur.com/aQ8Nqdg.jpg" alt="" width="69" height="69" /></td>  <!-- https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png -->
+    <td ><h1 style="color: #5b5050;"><center>&nbsp; &nbsp;List of Available Songs</center></h1></td>
+  </tr>
+</table>
+</div>
+<p>&nbsp;</p>
+
+<div class= "wrapper">
+<div class="main" style="overflow-y:auto" >
+<div id="accordion" class="panel-group">
+<!-- populated by query -->
+</div>
+</div>
+</div>		<!-- add by me -->
+<p>&nbsp;</p>
+<div>
+<p>&nbsp;</p>
+<p style="font-size:25px">Didn't find your song here? <a onclick="location.href='/songRequest';"> Write to us</a></p>
+</center>
+</div>
+</body>

@@ -1,0 +1,241 @@
+<!-- ######## https://html-online.com/editor/  ######## -->
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/js.cookie.js"></script>
+  <script>
+  function field_focus(field, email)
+  {
+    if(field.value == email)
+    {
+      field.value = '';
+    }
+  }
+
+  function field_blur(field, email)
+  {
+    if(field.value == '')
+    {
+      field.value = email;
+    }
+  }
+
+//Fade in dashboard box
+$(document).ready(function(){
+    $('.box').hide().fadeIn(1000);
+    });
+
+//Stop click event
+$('a').click(function(event){
+    event.preventDefault(); 
+	});
+  </script>
+
+  <style>
+  /*
+  for login form
+  */
+  
+  body{
+  font-family: 'Open Sans', sans-serif;
+  margin: 0 auto 0 auto;  
+  width:100%; 
+  text-align:center;
+  margin: 20px 0px 20px 0px;   
+}
+
+.box{
+  background:white;
+  width:300px;
+  border-radius:6px;
+  margin: 0 auto 0 auto;
+  padding:0px 0px 70px 0px;
+  border: #2980b9 4px solid; 
+}
+
+.email{
+  background:#ecf0f1;
+  border: #ccc 1px solid;
+  border-bottom: #ccc 2px solid;
+  padding: 8px;
+  width:250px;
+  color:#AAAAAA;
+  margin-top:10px;
+  font-size:1em;
+  border-radius:4px;
+}
+
+.password{
+  border-radius:4px;
+  background:#ecf0f1;
+  border: #ccc 1px solid;
+  padding: 8px;
+  width:250px;
+  font-size:1em;
+}
+
+.btn{
+  background:#2ecc71;
+  width:125px;
+  padding-top:5px;
+  padding-bottom:5px;
+  color:white;
+  border-radius:4px;
+  border: #27ae60 1px solid;
+  
+  margin-top:20px;
+  margin-bottom:20px;
+  float:left;
+  margin-left:16px;
+  font-weight:800;
+  font-size:0.8em;
+}
+
+.btn:hover{
+  background:#2CC06B; 
+}
+
+#btn2{
+  float:left;
+  background:#3498db;
+  width:125px;  padding-top:5px;
+  padding-bottom:5px;
+  color:white;
+  border-radius:4px;
+  border: #2980b9 1px solid;
+  
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-left:10px;
+  font-weight:800;
+  font-size:0.8em;
+}
+
+#btn2:hover{ 
+background:#3594D2; 
+}
+  
+body {
+    background-image: url("http://i.imgur.com/MX6JFfX.jpg"); /* http://wallpaperpulse.com/img/5176790.jpg     http://i.imgur.com/MX6JFfX.jpg     \protoio-Coffee%20jukebox-html\assets\784f637687a3bbb389d0d6fb8885daaa.jpg*/
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+input#bigbutton {
+width:100px;
+background: #3e9cbf; /*the colour of the button*/
+padding: 8px 14px 10px; /*apply some padding inside the button*/
+border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+/*style the text*/
+font-size:1.0em;
+font-family:Oswald, sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
+letter-spacing:.1em;
+text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
+color: #fff;
+/*use box-shadow to give the button some depth - see cssdemos.tupence.co.uk/box-shadow.htm#demo7 for more info on this technique*/
+-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+/*give the corners a small curve*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+/***SET THE BUTTON'S HOVER AND FOCUS STATES***/
+input#bigbutton:hover, input#bigbutton:focus {
+color:#dfe7ea;
+/*reduce the size of the shadow to give a pushed effect*/
+-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+}
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:active {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+container {
+	
+
+}
+</style>
+</head>
+<body>
+<center>
+<div>
+<p>&nbsp;</p>
+<table>
+  <tr>
+    <td ><img style="float: left; margin: 0px 0px 0px 0;" src="http://i.imgur.com/aQ8Nqdg.jpg" alt="" width="69" height="69" /></td>  <!-- https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png -->
+    <td ><h1 style="color: #5b5050;"><center>&nbsp; &nbsp;Manager Login</center></h1></td>
+  </tr>
+</table>
+</div>
+</center>
+<p>&nbsp;</p>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+<form method="post" action="index.html">
+<div class="box">
+<h1>Dashboard</h1>
+<input type="username" name="username" value="username" onFocus="field_focus(this, 'username');" onblur="field_blur(this, 'username');" class="email" id="username"/>
+
+<input type="password" name="password" value="password" onFocus="field_focus(this, 'password');" onblur="field_blur(this, 'password');" class="password" id= "password"/>
+<div class="btn" id= "submit_btn">Sign In</div><!-- End Btn -->
+</div> <!-- End Box -->  
+</form>
+<script type="text/javascript">
+var submit= document.getElementById('submit_btn');
+var admin_token;
+
+submit.onclick= function(){
+	var request= new XMLHttpRequest();
+	
+	request.onreadystatechange= function(){
+		if (request.readyState=== XMLHttpRequest.DONE){
+			if(request.status=== 200){
+				admin_token = JSON.parse(this.responseText).auth_token;
+				Cookies.set('admin_token', admin_token);
+				window.location = '/adminconsole';
+			}
+			else if(request.status=== 403){
+				alert('Incorrect credentials');
+			}
+			else if(request.status=== 500){
+				alert('Something went wrong');
+			}
+		}
+	}
+	
+	//make the request
+	var username= document.getElementById('username').value;
+	var password= document.getElementById('password').value;
+    request.open('POST', 'https://auth.jeopardy25.hasura-app.io/login', true);
+	request.setRequestHeader('Content-Type', 'application/json');
+	request.send(JSON.stringify({username: username, password: password}));	
+}
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<p>&nbsp;</p>
+<div>
+</div>
+</body>

@@ -1,0 +1,134 @@
+<html>
+<head>
+<script>
+var player_token;
+var mID = 0;
+var lastMID = 0;
+var listLength;
+var audio;
+
+function updatePlayCount(mID) {
+	var updateRequest = new XMLHttpRequest();
+	var length;
+	
+	updateRequest.onreadystatechange=function() {
+		if(updateRequest.readyState===XMLHttpRequest.DONE) {
+			if(updateRequest.status===200) {
+				//alert("Updated play count.");
+			}
+		}
+	}
+	updateRequest.open('POST', "https://data.jeopardy25.hasura-app.io/v1/query",true);
+	updateRequest.setRequestHeader('Content-type','application/json');
+	updateRequest.setRequestHeader('Authorization','Bearer '+player_token);
+	updateRequest.send(JSON.stringify({type: "update",args: {table: "musicdb","$inc": {"playcount": 1},"where": {"m_id": mID}}}));
+}
+
+function hasStopped() {
+	if(audio.ended) {
+		playQueueSong();
+	}
+}
+
+function songListLength() {
+	var selectRequest = new XMLHttpRequest();
+	
+	selectRequest.onreadystatechange=function() {
+		if(this.readyState===XMLHttpRequest.DONE && this.status===200) {
+			listLength = JSON.parse(this.responseText).count;
+		}
+	}
+	selectRequest.open('POST', "https://data.jeopardy25.hasura-app.io/v1/query",true);
+	selectRequest.setRequestHeader('Content-type','application/json');
+	selectRequest.setRequestHeader('Authorization','Bearer '+player_token);
+	selectRequest.send(JSON.stringify({type:"count",args:{table:"musicdb"}}));
+}
+
+function playRandom() {
+	mID = lastMID + 1;
+	if(mID > listLength) {
+		lastMID = 0;
+		playSong(1);
+		return;
+	}
+	var str= "/songs/"+mID+".mp3";
+	audio = new Audio(str);
+	audio.play();
+	console.log("Playing random song with id: "+mID);
+	updatePlayCount(parseInt(mID));
+	lastMID = mID;
+}
+
+function playSong(mID) {
+	lastMID = parseInt(mID);
+	var str= "/songs/"+mID+".mp3";
+	audio = new Audio(str);
+	audio.play();
+	console.log("Playing song from queue with id: "+mID);
+	updatePlayCount(parseInt(mID));
+}
+
+function playQueueSong() {
+	var mID;
+	var response;
+	var deleteRequest = new XMLHttpRequest();
+	var length;
+	
+	deleteRequest.onreadystatechange=function() {
+		if(deleteRequest.readyState===XMLHttpRequest.DONE) {
+			if(deleteRequest.status===200) {
+				response = JSON.parse(deleteRequest.responseText);
+				length = response.result.length;
+				if(length === 1) {
+					playRandom();
+				} else {
+					mID = response.result[1][0];
+					playSong(mID);
+				}
+			}
+		}
+	}
+	deleteRequest.open('POST', "https://data.jeopardy25.hasura-app.io/v1/query",true);
+	deleteRequest.setRequestHeader('Content-type','application/json');
+	deleteRequest.setRequestHeader('Authorization','Bearer '+player_token);
+	deleteRequest.send(JSON.stringify({type:"run_sql",args:{sql:"delete from songsqueue where addtime in (select addtime from songsqueue order by addtime limit 1) returning m_id"}}));
+}
+window.onload= function(){
+	
+	var request= new XMLHttpRequest();
+	
+	request.onreadystatechange= function(){
+		if (request.readyState=== XMLHttpRequest.DONE){
+			if(request.status=== 200){
+				player_token = JSON.parse(this.responseText).auth_token;
+				songListLength();
+				playQueueSong();
+				var myVar = setInterval(hasStopped, 3000);
+			}
+			else if(request.status=== 403){
+				alert('Incorrect credentials');
+			}
+			else if(request.status=== 500){
+				alert('Something went wrong');
+			}
+			else{
+				alert('Unknown error');
+			}
+		}
+	}
+	
+	//make the request
+	var username= "player";
+	var password= "player123";
+	request.open('POST', 'https://auth.jeopardy25.hasura-app.io/login', true);
+	request.setRequestHeader('Content-Type', 'application/json');
+	request.send(JSON.stringify({username: username, password: password}));
+}
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
