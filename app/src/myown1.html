@@ -285,6 +285,9 @@ function songQueue() {
 				}
 				songBar += createCardSongQueue(data);
 			}
+			if(songBar === "") {
+				songBar = "No Songs in queue. Add a song to play next!";
+			}
 			accordion.innerHTML = songBar;
 		}
 	}
