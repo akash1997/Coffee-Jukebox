@@ -235,7 +235,19 @@ font-weight:700
 <a href='#' class='button' onclick="successSubmission()" >Submit</a>
 </center>
 <script>
+//validating fields filled
+function check_empty() {
+	if (document.getElementById('songname').value == "" || document.getElementById('artists').value == "" || document.getElementById('album').value == "") {
+		alert("Fill All Fields !");
+		return false;
+	}
+	return true;
+}
+
 function successSubmission(){
+	if(!check_empty()) {
+		return;
+	}
 	var request= new XMLHttpRequest();
 	
 	request.onreadystatechange= function(){
