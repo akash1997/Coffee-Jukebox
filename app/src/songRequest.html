@@ -249,8 +249,8 @@ font-weight:700
 <script>
 //validating fields filled
 function check_empty() {
-	if (document.getElementById('songname').value == "" || document.getElementById('artists').value == "" || document.getElementById('album').value == "") {
-		alert("Fill All Fields !");
+	if (document.getElementById('songname').value == "") {
+		alert("Fill atleast the song field!");
 		return false;
 	}
 	return true;
