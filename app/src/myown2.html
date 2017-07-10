@@ -275,7 +275,7 @@ font-weight:700
 </head>
 <body>
 <script type="text/javascript">
-var auth_token;
+var auth_token = "";
 var userIP;
 
 function findIP(onNewIP) { //  onNewIp - your listener function for new IPs
@@ -413,8 +413,16 @@ function songlist() {
 	selectRequest.send(JSON.stringify({type:"select",args:{table:"musicdb",columns:["*"],order_by:"musicname"}}));
 }
 
+function redirectToQueue() {
+	alert("Please look at the queue before accessing the database. Redirecting you now...");
+	window.location = '/';
+}
+
 window.onload = function(){
 	auth_token = Cookies.get('auth_token');
+	if(auth_token === "") {
+		redirectToQueue();
+	}
 	songlist();
 	findIP(addIP);
 }
