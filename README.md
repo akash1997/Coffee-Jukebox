@@ -6,7 +6,7 @@ A music player for shops with the power to customers to add their songs to the p
 
 ## **References**
 
-For a more clear idea on the development of this app, have a look at these blogs which deal with the development of this app from scratch.
+For a more clear idea on the development of this app, have a look at the blog which deal with the development of this app from scratch.
 
 [Coffee Jukebox Blog](https://coffee-jukebox.blogspot.in)
 
